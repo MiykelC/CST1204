@@ -21,10 +21,6 @@ public class Biker {
     // of years.
     private SortedMap<Integer, Double> averageSpeeds;
 
-    // this represents the number of years this biker has
-    // participated in the Tour de France
-    private int numEvents;
-
     /**
      * Constructor to create a new Biker object.
      *
@@ -42,9 +38,6 @@ public class Biker {
         // Notice the use of the keyword _this_.
         this.lastName = lastName;
         this.firstName = firstName;
-
-        // Set numEvents to 1
-        numEvents = 1;
 
         averageSpeeds = new TreeMap<Integer, Double>();
 
@@ -68,8 +61,6 @@ public class Biker {
         if (!averageSpeeds.containsKey(year)) {
             // add the new data
             averageSpeeds.put(year, avgSpeed);
-            // increment numEvents
-            ++numEvents;
         }
     }
 
@@ -94,7 +85,7 @@ public class Biker {
      *         once then the improvement is 0.
      */
     public double getBestGain() {
-        // TODO this is where you must add your code
+       
         // the return statement is bogus for now
         // You need to implement this method correctly.
 
@@ -129,7 +120,7 @@ public class Biker {
      * @return The median speed from the set of the biker's appearances.
      */
     public double getMedianSpeed() {
-        // TODO: return the median speed for this biker across the years
+      
         // the return statement is bogus for now.
         // You need to implement this method correctly.
         List<Double> speedEntries = new ArrayList<>();

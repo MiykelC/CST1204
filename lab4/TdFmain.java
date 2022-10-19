@@ -116,7 +116,7 @@ public class TdFmain {
                     currentBiker.getName(), currentBiker.getBestGain(), currentBiker.getMedianSpeed()));
         }
 
-        // TODO: Compute the median speed across all the entries.
+       
         double medianSpeed = 0;
         // Your code for this should go here and should set the correct value in
         // medianSpeed.
