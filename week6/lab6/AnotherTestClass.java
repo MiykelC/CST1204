@@ -1,4 +1,4 @@
-package lab6;
+package week6.lab6;
 
 import org.junit.Test;
 
