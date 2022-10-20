@@ -1,4 +1,5 @@
 
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 /*
@@ -21,9 +22,9 @@ public class HtmlValidator {
         aQueue.add(tag);
     }
     public void removeAll(String element){
-        for (HtmlTag x: tags){
-        if(x == element)
-        tags.remove(x);
+        for (HtmlTag x: aQueue){
+        if(x.getElement() == element)
+        aQueue.remove(x);
         }
     }
     public char[] getTags() {
