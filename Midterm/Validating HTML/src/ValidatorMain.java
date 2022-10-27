@@ -1,13 +1,3 @@
-// Instructor-provided code.
-// This program tests your HTML validator object on any file or URL you want.
-//
-// When it prompts you for a file name, if you type a simple string such
-// as "test1.html" (without the quotes) it will just look on your hard disk
-// in the same directory as your code or Eclipse project.
-//
-// If you type a string such as "http://www.google.com/index.html", it will
-// connect to that URL and download the HTML content from it.
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -15,9 +5,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.Scanner;
-
-
-
 import java.util.Queue;
 
 public class ValidatorMain {
@@ -113,7 +100,7 @@ public class ValidatorMain {
     /**
      * Opens the given address for reading input, and reads it until the end
      * of the file, and returns the entire file contents as a big String.
-     * 
+     *
      * If address starts with http[s]:// , assumes address is a URL and tries
      * to download the data from the web. Otherwise, assumes the address
      * is a local file and tries to read it from the disk.
