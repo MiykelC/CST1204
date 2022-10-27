@@ -4,6 +4,8 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
+
+
 /*
  * This is the HtmlValidator class.
  * You should implement this class.
@@ -58,7 +60,7 @@ public class HtmlValidator {
       
     }
     public void validate(){
-        Stack<HtmlTag> myTmpStack = new Stack<>();
+        Stack<HtmlTag> TempStack = new Stack<>();
         int indentation = 0;
         for (HtmlTag aTag: tagsQueue){
             if(!aTag.isSelfClosing()){
@@ -66,17 +68,24 @@ public class HtmlValidator {
                     System.out.print(" ");
                 }
                 if(aTag.isOpenTag()){
-                    myTmpStack.push(aTag);
+                    TempStack.push(aTag);
                    indentation += 4;
                 }
                 else {
                     for(int i= 0; i<indentation -4; i++)
                         System.out.print(" ");
                     System.out.println(aTag.toString());
-                    myTmpStack.pop();
+                    TempStack.pop();
                     indentation -= 4;
                 }
             }
+            if(TempStack.isEmpty())
+            {
+                while(!TempStack.isEmpty()){
+                    System.out.println("Error unclosed tag:" + TempStack.pop());
+                }
+            }
+  
         }
     }
 }
