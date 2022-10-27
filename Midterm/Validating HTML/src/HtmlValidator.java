@@ -1,35 +1,83 @@
 
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Stack;
 
 /*
  * This is the HtmlValidator class.
  * You should implement this class.
  */
 public class HtmlValidator {
-    
-    Queue<HtmlTag> aQueue;
-    
-    public HtmlValidator(){
-        Queue<HtmlTag> aQueue = new PriorityQueue();
+    Queue<HtmlTag> tagsQueue;
+
+    public HtmlValidator() {
+        tagsQueue = new PriorityQueue<>();
     }
-    public HtmlValidator(Queue<HtmlTag> tags){
-        for(HtmlTag x : tags){
-        aQueue.add(x);
+
+    public HtmlValidator(Queue<HtmlTag> tags) {
+        if(tags == null) {
+            throw new IllegalArgumentException();
+        }
+        tagsQueue = new LinkedList<>();
+        Queue<HtmlTag> tempQueue = new LinkedList<>();
+        for (HtmlTag x : tags) {
+            tempQueue.add(x);
+        }
+        for (HtmlTag x : tags) {
+            tagsQueue.add(x);
         }
     }
-    public void addTag(HtmlTag tag){
-        aQueue.add(tag);
-    }
-    public void removeAll(String element){
-        for (HtmlTag x: aQueue){
-        if(x.getElement() == element)
-        aQueue.remove(x);
+
+    public void addTag(HtmlTag tag) {
+        if(tag == null) {
+            throw new IllegalArgumentException();
         }
+        tagsQueue.add(tag);
     }
-    public char[] getTags() {
-        return null;
+
+    public Queue<HtmlTag> getTags() {
+        Queue<HtmlTag> result = new LinkedList<>();
+        Queue<HtmlTag> tempQueue = new LinkedList<>();
+
+        for (HtmlTag x : tagsQueue) {
+            tempQueue.add(x);
+        }
+        for (HtmlTag x : tempQueue) {
+            result.add(x);
+        }
+        return result;
     }
-    public void validate() {
+
+    public void removeAll(String element ){
+        for(HtmlTag x: tagsQueue){
+            if(x.getElement().toString().equals(element)){
+                tagsQueue.remove(x);
+            }
+        }
+      
+    }
+    public void validate(){
+        Stack<HtmlTag> myTmpStack = new Stack<>();
+        int indentation = 0;
+        for (HtmlTag aTag: tagsQueue){
+            if(!aTag.isSelfClosing()){
+                for(int i= 0; i<indentation; i++){
+                    System.out.print(" ");
+                }
+                if(aTag.isOpenTag()){
+                    myTmpStack.push(aTag);
+                   indentation += 4;
+                }
+                else {
+                    for(int i= 0; i<indentation -4; i++)
+                        System.out.print(" ");
+                    System.out.println(aTag.toString());
+                    myTmpStack.pop();
+                    indentation -= 4;
+                }
+            }
+        }
     }
 }
+   
