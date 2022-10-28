@@ -76,9 +76,10 @@ public class HtmlValidator {
                     System.out.println(aTag.toString());
                     TempStack.pop();
                     indentation -= 4;
-                }
+                } 
             }
-        }   
+        }
+        
         // check if the stack is not empty, print ERROR unclosed tag:
         if (!TempStack.isEmpty()) {
             while (!TempStack.isEmpty()) {
