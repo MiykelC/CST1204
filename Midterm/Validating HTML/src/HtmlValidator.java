@@ -78,15 +78,12 @@ public class HtmlValidator {
                     indentation -= 4;
                 }
             }
-        
-        }
-                
+        }   
         // check if the stack is not empty, print ERROR unclosed tag:
         if (!TempStack.isEmpty()) {
             while (!TempStack.isEmpty()) {
                 System.out.println("ERROR unclosed tag:" + TempStack.pop());
             }
         } 
-        
     }
 }
