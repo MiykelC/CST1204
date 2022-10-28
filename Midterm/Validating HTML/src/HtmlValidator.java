@@ -85,5 +85,5 @@ public class HtmlValidator {
                 System.out.println("ERROR unclosed tag:" + TempStack.pop());
             }
         } 
-    }
-}
+     }
+ }
