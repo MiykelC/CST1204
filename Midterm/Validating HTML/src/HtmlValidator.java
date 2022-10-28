@@ -59,7 +59,6 @@ public class HtmlValidator {
         int indentation = 0;
         for (HtmlTag aTag : tagsQueue) {
             if (!aTag.isSelfClosing()) {
-
                 if (aTag.isOpenTag()) {
                     // print the indentation
                     for (int i = 0; i < indentation; i++)
