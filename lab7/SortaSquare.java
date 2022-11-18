@@ -3,7 +3,7 @@ package lab7;
 import java.util.Set;
 import java.util.HashSet;
 
-public class lab7 {
+public class SortaSquare {
 
     public static Set<Integer> getSortaSquares(Set<Integer> s) {
        
@@ -25,7 +25,7 @@ public class lab7 {
         while (b > 0) { // my stopping criteria
             int a = 1;
             while (a < b) {
-                n = a b * b;
+                n = a  * b;
                 if (n == x) {
                     result = true;
                     break;
