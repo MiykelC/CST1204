@@ -32,3 +32,27 @@ public class lab8 {
   static final int max = 10000;
   static int[] cache = new int[max];
 
+  static int fibonacci_recursive_dp(int n) {
+    if (n == 0 || n == 1)
+      return n;
+    else {
+      if (cache[n] != 0) {
+        return cache[n];
+      } else
+        cache[n] = fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2);
+      return cache[n];
+    }
+  }
+
+  static int fibonacci_iterative(int n) {
+    Integer[] arr = new Integer[n + 1];
+    for (int i = 0; i <= n; i++) {
+      if (i == 0 || i == 1)
+        arr[i] = i;
+      else
+        arr[i] = arr[i - 1] + arr[i - 2];
+    }
+    return arr[n];
+  }
+
+  
