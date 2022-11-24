@@ -55,4 +55,11 @@ public class lab8 {
     return arr[n];
   }
 
-  
+  public static void main(String[] args) {
+    int x = 1234;
+    // vertical_numbers_recursive(x);
+    // vertical_numbers_iterative(x);
+    // System.out.println(fibonacci_recursive(19)); // expected return : 4181
+    // System.out.println(fibonacci_iterative(19)); // expected return : 4181
+
+  }
