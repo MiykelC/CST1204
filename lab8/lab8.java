@@ -57,9 +57,22 @@ public class lab8 {
 
   public static void main(String[] args) {
     int x = 1234;
-    // vertical_numbers_recursive(x);
-    // vertical_numbers_iterative(x);
-    // System.out.println(fibonacci_recursive(19)); // expected return : 4181
-    // System.out.println(fibonacci_iterative(19)); // expected return : 4181
+
+    int n = 40;
+    System.out.println("Fibonacci iteration:");
+    long start = System.currentTimeMillis();
+    System.out.printf("Fibonacci sequence(element at index %d) = %d \n", n, fibonacci_iterative(n));
+    System.out.printf("Time: %d ms\n", System.currentTimeMillis() - start);
+
+    System.out.println("Fibonacci recursive:");
+    start = System.currentTimeMillis();
+    System.out.printf("Fibonacci sequence(element at index %d) = %d \n", n, fibonacci_recursive(n));
+    System.out.printf("Time: %d ms\n", System.currentTimeMillis() - start);
+
+    System.out.println("Fibonacci recursive:");
+    start = System.currentTimeMillis();
+    System.out.printf("Fibonacci sequence(element at index %d) = %d \n", n, fibonacci_recursive_dp(n));
+    System.out.printf("Time: %d ms\n", System.currentTimeMillis() - start);
 
   }
+}
