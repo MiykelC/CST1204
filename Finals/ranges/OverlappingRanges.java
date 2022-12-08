@@ -20,7 +20,13 @@ public class OverlappingRanges {
    */
   public static Integer maxOverlapInt(ArrayList<Integer> startPoints,
       ArrayList<Integer> endPoints) throws NoOverlapException {
-    // TODO: Implement this method
+  if (startPoints == null || endPoints == null ) {
+    throw new IllegalArgumentException();
+  }
+  if (startPoints.isEmpty() || endPoints.isEmpty()) {
+    throw new IllegalArgumentException();
+  }
+  if (startPoints.size)
     return 0;
   }
 
