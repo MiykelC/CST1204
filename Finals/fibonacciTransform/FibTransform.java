@@ -32,8 +32,40 @@ public class FibTransform {
 
     Set<Integer> set = new HashSet<Integer>();
     set.add(1);
-    set.add(2;)
+    set.add(2 );
+    int max = 2;
+    int min = 1;
+
+    while (max < n) {
+      int temp = max;
+      max = max + min;
+      min = temp;
+      set.add(max);
+    }
+    if(set.contains(n)){
+      return true;
+    }
+    int count = 0;
+    int temp = n;
+while (temp < 2) {
+  if(set.contains(temp)) {
+count++;
+temp = temp - temp;
+  } else {
+    temp = temp - 1;
+    count++;
   }
+}
+if (count <=m) {
+  return true; 
+} else {
+  return false;
+}
+
+
+  }
+
+
 
   /**
    * Transform a number into a Fibonacci number using at most m steps: One can
@@ -51,7 +83,7 @@ public class FibTransform {
    */
   public static boolean isPossible(int n, int m) {
     
-    return false;
+    
      
   }
 
