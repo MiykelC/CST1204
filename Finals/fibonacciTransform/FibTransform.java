@@ -24,8 +24,15 @@ public class FibTransform {
    * @return true if the transformation is possible and false otherwise
    */
   public static boolean isPossible_onlyOneDoubling(int n, int m) {
-    // TODO: Implement this method
-    return false; // change this
+    if (n == 0 && m == 0) {
+      return true;
+    } else if (n == 0 || m == 0) {
+      return false;
+    }
+
+    Set<Integer> set = new HashSet<Integer>();
+    set.add(1);
+    set.add(2;)
   }
 
   /**
